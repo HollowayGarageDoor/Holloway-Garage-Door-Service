@@ -13,101 +13,64 @@
       scroll-behavior: smooth;
     }
     @media (max-width: 768px) {
-      .service-grid {
-        display: grid !important;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
-        gap: 1.5rem !important;
-      }
-
-      .service-box {
-        height: auto !important;
-        padding: 1.25rem !important;
-        max-width: 90%;
-      }
-
-      section {
-        padding: 2rem 1rem !important;
-      }
-
-      .hero h2 {
-        font-size: 1.75rem !important;
-      }
-
-      .hero p {
-        font-size: 1rem !important;
-      }
-
-      /* Fix for contact form layout */
-      #contact > div {
-        flex-direction: column !important;
-        flex-wrap: wrap !important;
-      }
-
-      #contact > div > div {
-        width: 100% !important;
-        min-width: unset !important;
-        padding: 2rem !important;
-      }
-
-      /* Show testimonial buttons and improve layout */
-      .testimonials button {
-        display: block !important;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: #3F63C8;
-        color: white;
-        border: none;
-        padding: 1rem;
-        cursor: pointer;
-        z-index: 10;
-        font-size: 1.5rem;
-      }
-
-      .testimonials button:first-of-type {
-        left: 0;
-      }
-
-      .testimonials button:last-of-type {
-        right: 0;
-      }
-
-      .testimonials > div {
-        overflow-x: auto !important;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        padding: 1rem;
-        display: flex;
-        gap: 1rem;
-      }
-
-      .testimonials-box {
-        min-width: 85vw;
-        max-width: 90vw;
-        flex: 0 0 auto;
-        scroll-snap-align: start;
-      }
+  .service-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+    gap: 1.5rem !important;
+  }
+  .service-box {
+    height: auto !important;
+    padding: 1.25rem !important;
+  }
+  section {
+    padding: 2rem 1rem !important;
+  }
+  .hero h2 {
+    font-size: 1.75rem !important;
+  }
+  .hero p {
+    font-size: 1rem !important;
+  }
+    .service-grid {
+      flex-direction: column;
+      align-items: center;
     }
+    .service-box {
+      max-width: 90%;
+    }
+    .testimonials button {
+      display: none;
+    }
+    #contact > div {
+      flex-direction: column;
+    }
+    #contact > div > div {
+      width: 100% !important;
+      min-width: unset !important;
+    }
+  }
     .flip-container {
       perspective: 1000px;
     }
     .flip-box {
-      width: 100%;
-      transition: transform 0.6s;
-      transform-style: preserve-3d;
-      position: relative;
-    }
+  width: 100%;
+  
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+  
+}
     .flipped .flip-box {
       transform: rotateY(180deg);
     }
     .flip-front, .flip-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
-      padding: 1rem;
-      box-sizing: border-box;
-    }
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  padding: 1rem;
+  box-sizing: border-box;
+}
     .flip-back {
       background: white;
       transform: rotateY(180deg);
@@ -123,5 +86,300 @@
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
     }
 </style>
-<!-- The rest of your HTML remains unchanged -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Holloway Garage Door Service</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #ffffff, #f6f8fb);
+      color: #000;
+      text-align: center;
+    }
+    header {
+      background: linear-gradient(to right, #3F63C8, #5a7de0);
+      color: #FFFFFF;
+      padding: 2rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    .tagline {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    nav {
+      margin-top: 1rem;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: #FFFFFF;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #CCCCCC;
+    }
+    section {
+      padding: 3rem 1rem; border-top: 4px solid #CCCCCC; border-bottom: 4px solid #CCCCCC;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-button {
+      background: linear-gradient(to right, #3F63C8, #5a7de0);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      margin-top: 1rem;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      border-radius: 4px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .cta-button:hover {
+      background-color: #2d4fab;
+      transform: scale(1.05);
+    }
+    .hero {
+      background-color: #f4f4f4;
+      padding: 4rem 1rem;
+      margin-bottom: 3rem;
+    }
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+    .service-grid {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .service-box {
+      flex: 1 1 20%;
+      max-width: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 2px solid #CCCCCC;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background-color: white;
+    }
+    .service-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+    .testimonials, .portfolio {
+      margin-top: 4rem;
+    }
+    .testimonials-box {
+      border: 2px solid #CCCCCC;
+      border-radius: 10px;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+      background-color: #f9f9f9;
+    }
+    .portfolio-bar {
+      height: 5px;
+      background: linear-gradient(to right, #3F63C8, #5a7de0);
+      width: 150px;
+      margin: 1rem auto;
+      border-radius: 2px;
+    }
+    form {
+      max-width: 500px;
+      margin: auto;
+      text-align: left;
+      background: linear-gradient(to bottom, #ffffff, #f1f1f1);
+      padding: 2rem;
+      border: 1px solid #CCCCCC;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    form label {
+      display: block;
+      margin: 1rem 0 0.5rem;
+      font-weight: bold;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #CCCCCC;
+      border-radius: 4px;
+    }
+    footer {
+      background: linear-gradient(to right, #3F63C8, #5a7de0);
+      color: white;
+      padding: 3rem 2rem;
+      box-shadow: inset 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .footer-buttons button {
+      margin: 0.5rem;
+    }
+  </style>
+</head>
+<body >
+  <header style="padding: 1rem 0 0.5rem 0; background: none;">
+  <div style="text-align: center;">
+    <img src="https://i.imgur.com/h6puRho.png" alt="Holloway Garage Door Service Logo" style="width: 100%; max-width: 900px; height: auto; margin-bottom: 0;">
+  </div>
+  <div style="background: linear-gradient(to right, #3F63C8, #5a7de0); padding: 1.25rem 0; border-top: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0;">
+  <nav style="display: flex; justify-content: center; align-items: center; gap: 1rem;">
+  <style>
+    nav span {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    nav span:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+  </style>
+<span style="background-color: white; padding: 0.3rem 0.6rem; border-radius: 6px; margin: 0 0.5rem;"><a href="#services" style="color: #3F63C8; text-decoration: none; font-weight: bold;">Services</a></span>
+      <span style="background-color: white; padding: 0.3rem 0.6rem; border-radius: 6px; margin: 0 0.5rem;"><a href="#about" style="color: #3F63C8; text-decoration: none; font-weight: bold;">About Us</a></span>
+      <span style="background-color: white; padding: 0.3rem 0.6rem; border-radius: 6px; margin: 0 0.5rem;"><a href="#contact" style="color: #3F63C8; text-decoration: none; font-weight: bold;">Contact</a></span>
+      
+    </nav>
+</div>
+  </header>
 
+  <div style="height: 2rem;"></div>
+  <section class="hero" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/88/Garage_door_torsion_spring.jpg'); background-size: cover; background-position: center; color: white; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-bottom: 4px solid #CCCCCC;">
+  <div style="background-color: rgba(255, 255, 255, 0.95); padding: 2rem; border-radius: 16px; max-width: 800px; margin: auto; box-shadow: 0 6px 20px rgba(0,0,0,0.1); text-align: center;">
+    <h2 style="font-size: 2.25rem; color: #3F63C8; margin-bottom: 1rem;">Holloway Garage Door Repair & Installation</h2>
+    <p style="font-size: 1.1rem; color: #333; line-height: 1.6;">Professional results without the pressure. Honest pricing, dependable service, and a local touch you can trust.</p>
+    <a href="#contact" class="cta-button">Get a Free Quote</a>
+  </div>
+</section>
+
+  <section style="background: linear-gradient(to right, #3F63C8, #5a7de0); padding: 4rem 2rem; border-bottom: 4px solid #CCCCCC;">
+    <h2 style="font-size: 2rem; color: white; margin: 0;">What We Do</h2>
+  </section>
+  <section id="services" style="background-image: url('https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 3rem 1rem;">
+  <div class="service-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;">
+  <div class="service-box" style="background-color: white; border-radius: 10px; overflow: hidden; height: 320px; display: flex; flex-direction: column; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);">
+    <div style="background: linear-gradient(to right, #3F63C8, #5a7de0); color: white; padding: 1rem; font-size: 1.25rem; font-weight: bold; text-align: center;">Spring Inspections</div>
+    <p style="padding: 1rem; font-size: 1.15rem; color: #333; text-align: center;">Ensure your garage door springs are properly tensioned and safe for use.</p>
+  </div>
+  <div class="service-box" style="background-color: white; border-radius: 10px; overflow: hidden; height: 320px; display: flex; flex-direction: column; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);">
+    <div style="background: linear-gradient(to right, #3F63C8, #5a7de0); color: white; padding: 1rem; font-size: 1.25rem; font-weight: bold; text-align: center;">Motor Inspections</div>
+    <p style="padding: 1rem; font-size: 1.15rem; color: #333; text-align: center;">Check motor performance and function to ensure smooth operation.</p>
+  </div>
+  <div class="service-box" style="background-color: white; border-radius: 10px; overflow: hidden; height: 320px; display: flex; flex-direction: column; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);">
+    <div style="background: linear-gradient(to right, #3F63C8, #5a7de0); color: white; padding: 1rem; font-size: 1.25rem; font-weight: bold; text-align: center;">Door Design</div>
+    <p style="padding: 1rem; font-size: 1.15rem; color: #333; text-align: center;">We help you design the perfect garage door to match your home’s look.</p>
+  </div>
+  <div class="service-box" style="background-color: white; border-radius: 10px; overflow: hidden; height: 320px; display: flex; flex-direction: column; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);">
+    <div style="background: linear-gradient(to right, #3F63C8, #5a7de0); color: white; padding: 1rem; font-size: 1.25rem; font-weight: bold; text-align: center;">Repairs</div>
+    <p style="padding: 1rem; font-size: 1.15rem; color: #333; text-align: center;">Replace damaged springs or faulty motors with top-quality parts.</p>
+  </div>
+</div>
+  </div>
+</section>
+  <section id="about" style="padding: 3rem 1rem; background: linear-gradient(to right, #3F63C8, #5a7de0); color: white; text-align: center;">
+  <h2 style="font-size: 2rem; margin: 0;">About Us</h2>
+</section>
+  <div style="background: linear-gradient(to bottom, #ffffff, #f6f8fb); padding: 3rem; border-radius: 16px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); max-width: 1000px; margin: auto;">
+  <p style="margin-top: 1rem; font-size: 1.15rem; line-height: 1.9; color: #333;">
+    Hi, I'm Cole Holloway—owner of Holloway Garage Door Service. I started this company with a simple goal: to offer reliable, affordable, and local service you can trust. I’ve always believed that good work should come with fair pricing and no pressure. Because we’re a small, locally owned business, we’re able to keep things personal and cost-effective. There are no high overhead costs, pushy sales tactics, or hidden fees—just honest work and real results from people who care.
+    <br><br><strong style="display: block; margin-top: 1rem; font-size: 1.1rem; color: #3F63C8;">Remember—the right way is Holloway.</strong>
+  </p>
+</div>
+    </div>
+  </section>
+
+  <section style="background: linear-gradient(to right, #3F63C8, #5a7de0); padding: 4rem 2rem; border-bottom: 4px solid #CCCCCC; margin-top: 3rem;">
+    <h2 style="font-size: 2rem; color: white; margin: 0;">What Our Clients Say</h2>
+  </section>
+  <section class="testimonials" style="position: relative;">
+    <button onclick="scrollTestimonials(-1)" style="position:absolute; top:50%; left:0; transform:translateY(-50%); background:#3F63C8; color:white; border:none; padding:1rem; cursor:pointer; z-index:10;">&#10094;</button>
+    <button onclick="scrollTestimonials(1)" style="position:absolute; top:50%; right:0; transform:translateY(-50%); background:#3F63C8; color:white; border:none; padding:1rem; cursor:pointer; z-index:10;">&#10095;</button>
+    <div style="display: flex; overflow-x: hidden; gap: 1rem; padding: 1rem; scroll-snap-type: x mandatory;">
+      
+      <div class="testimonials-box" style="min-width: 300px; flex: 0 0 auto; scroll-snap-align: start;">
+        <p><em>"Honest and reliable! Super happy with the work that he did!"</em></p>
+        <p>- Erin E.</p>
+      </div>
+      <div class="testimonials-box" style="min-width: 300px; flex: 0 0 auto; scroll-snap-align: start;">
+        <p><em>"Contact for all garage door needs. Fantastic customer service and quality work."</em></p>
+        <p>- Stephen B.</p>
+      </div>
+      <div class="testimonials-box" style="min-width: 300px; flex: 0 0 auto; scroll-snap-align: start;">
+        <p><em>"The most reliable guy I know is starting a garage door repair company, highly recommend his service!"</em></p>
+        <p>- Kassidy C.</p>
+      </div>
+      <div class="testimonials-box" style="min-width: 300px; flex: 0 0 auto; scroll-snap-align: start;">
+        <p><em>"I’ve worked with Cole before. He is hardworking, dependable, dedicated, honest, and knowledgeable. Fast, affordable, and efficient, quality service all around."</em></p>
+        <p>- Brent H.</p>
+      </div>
+      <div class="testimonials-box" style="min-width: 300px; flex: 0 0 auto; scroll-snap-align: start;">
+        <p><em>"Cole really knows the garage door business and he is reasonably priced!"</em></p>
+        <p>- Carla H.</p>
+      </div>
+      <div class="testimonials-box" style="min-width: 300px; flex: 0 0 auto; scroll-snap-align: start;">
+        <p><em>"Very professional. Good pricing, friendly and trustworthy. I highly recommend them!"</em></p>
+        <p>- Tamra T.</p>
+      </div>
+      <div class="testimonials-box" style="min-width: 300px; flex: 0 0 auto; scroll-snap-align: start;">
+        <p><em>"Cole is hard working, reliable and professional! He’s super knowledgeable and just all around a great person. I would highly recommend him!"</em></p>
+        <p>- Remie B.</p>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <section id="contact" style="padding: 0; border-top: 4px solid #CCCCCC; background-image: url('https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg'); background-size: cover; background-position: center;">
+  <div style="display: flex; flex-direction: row; flex-wrap: nowrap; min-height: 600px; width: 100%;">
+    <div style="flex: 1 1 50%; padding: 4rem 2rem; background-color: rgba(255,255,255,0.75); display: flex; flex-direction: column; justify-content: center; align-items: center; min-width: 50%;">
+      <div style="max-width: 500px; width: 100%; height: 100%; background: linear-gradient(to bottom, #ffffff, #f6f8fb); padding: 2rem; border-radius: 16px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); display: flex; flex-direction: column; justify-content: center;">
+        <h2 style="color: #3F63C8; font-size: 2rem; margin-bottom: 1rem;">Contact Us</h2>
+        <p style="margin-bottom: 1rem; font-weight: bold; font-size: 1.05rem;">Phone: <a href="tel:4056409892" style="color: #3F63C8; text-decoration: none;">(405) 640-9892</a><br>Email: <a href="mailto:hollowaygaragedoor@gmail.com" style="color: #3F63C8; text-decoration: none;">hollowaygaragedoor@gmail.com</a></p>
+        <form name="contact" method="POST" netlify data-netlify="true" style="text-align: left;">
+  <input type="hidden" name="form-name" value="contact">
+  <input type="hidden" name="form-name" value="contact">
+          <label style="color: #3F63C8; font-weight: bold;">Name:<input type="text" name="name" style="width: 100%; margin-top: 0.25rem; margin-bottom: 1rem; padding: 0.5rem; border: 1px solid #CCC; border-radius: 6px;" /></label>
+          <label style="color: #3F63C8; font-weight: bold;">Email:<input type="email" name="email" style="width: 100%; margin-top: 0.25rem; margin-bottom: 1rem; padding: 0.5rem; border: 1px solid #CCC; border-radius: 6px;" /></label>
+          <label style="color: #3F63C8; font-weight: bold;">Phone:<input type="tel" name="phone" style="width: 100%; margin-top: 0.25rem; margin-bottom: 1rem; padding: 0.5rem; border: 1px solid #CCC; border-radius: 6px;" /></label>
+          <label style="color: #3F63C8; font-weight: bold;">Message:<textarea name="message" rows="5" style="width: 100%; margin-top: 0.25rem; padding: 0.5rem; border: 1px solid #CCC; border-radius: 6px;"></textarea></label>
+          <button type="submit" class="cta-button" style="margin-top: 1.5rem;">Send Message</button>
+        </form>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+  
+    
+  <section style="padding: 3rem 1rem; background: linear-gradient(to right, #3F63C8, #5a7de0); color: white; text-align: center;">
+  <h2 style="font-size: 2rem; margin-bottom: 1rem;">Areas We Service</h2>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;"><div style="background-color: white; color: #3F63C8; padding: 1rem 2rem; border-radius: 8px; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">Yukon</div>
+    <div style="background-color: white; color: #3F63C8; padding: 1rem 2rem; border-radius: 8px; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">Norman</div>
+    <div style="background-color: white; color: #3F63C8; padding: 1rem 2rem; border-radius: 8px; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">Moore</div>
+    <div style="background-color: white; color: #3F63C8; padding: 1rem 2rem; border-radius: 8px; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">Oklahoma City</div>
+    <div style="background-color: white; color: #3F63C8; padding: 1rem 2rem; border-radius: 8px; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">Edmond</div>
+  </div>
+<p style="margin-top: 2rem; font-size: 1rem;">&copy; 2025 Holloway Garage Door Service. All rights reserved.</p>
+</section>
+</footer>
+<script>
+  function scrollTestimonials(direction) {
+    const container = document.querySelector('.testimonials > div');
+    const scrollAmount = 320;
+    container.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>
